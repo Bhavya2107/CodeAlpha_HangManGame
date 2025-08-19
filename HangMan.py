@@ -1,14 +1,11 @@
 import random
 
-# 1. Predefined list of words
 word_list = ["apple", "pizza", "train", "snake", "robot"]
 
-# 2. Choose a random word from the list
 word_to_guess = random.choice(word_list)
 guessed_letters = []
 attempts_left = 6
 
-# 3. Create a display version of the word (e.g., _ _ _ _ _)
 display_word = ["_"] * len(word_to_guess)
 
 print("🎮 Welcome to Hangman!")
@@ -16,7 +13,6 @@ print("Guess the word one letter at a time.")
 print(f"You have {attempts_left} incorrect guesses allowed.")
 print(" ".join(display_word))
 
-# 4. Game loop
 while attempts_left > 0 and "_" in display_word:
     guess = input("\nEnter a letter: ").lower()
 
@@ -43,7 +39,6 @@ while attempts_left > 0 and "_" in display_word:
     print(f"Guessed letters: {', '.join(guessed_letters)}")
     print(f"Attempts left: {attempts_left}")
 
-# 5. Game Over
 if "_" not in display_word:
     print("\n🎉 Congratulations! You guessed the word!")
 else:
